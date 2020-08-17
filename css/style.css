@@ -1,0 +1,736 @@
+@import 'utilities.css'; 
+:root{
+    --primary:#3DCFD3;
+    --dark:#161616;
+    --pure:#ffffff;
+    --ternary:#898989;
+    --light:#F2F2F2;
+    --secondary:#070606;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smotthing:antialiased;
+    scroll-behavior: smooth;
+
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
+    
+}
+/* Reuseable content */
+.container{
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+ p{
+     color: var(--ternary);
+    margin-bottom: 1rem;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+}
+h2{
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+h2 span{
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+section{
+    padding: 6rem 0;
+}
+/* close  */
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  START Header Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+header{
+    background-color: var(--dark);
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);  */
+    background: linear-gradient(rgba(22, 22, 22, 0.5),rgba(22, 22, 22, 0.5)), url('../img/header-bg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+header nav .left a{
+    text-decoration: none;
+    color: var(--pure);
+    margin-left: 2rem;
+    text-transform: uppercase;
+    transition: all .3s ease;
+
+}
+
+header nav .nav-item .active{
+    color: var(--primary);
+}
+header nav .left a:hover{
+    color: var(--primary);
+}
+header nav{
+    padding: 1.5rem 0;
+}
+header nav .branding{
+    margin-right: 3rem;
+}
+
+header nav .branding img{
+    height: 40px;
+    width: 100px;
+    
+}
+
+header nav .branding .dark-logo{
+    display: none;
+}
+
+.hero{
+    padding: 3rem 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.hero .left img{
+    width: 440px;
+
+}
+.hero{
+    color: var(--pure);
+}
+.hero h6{
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem ;
+}
+.hero  h1{
+    font-size: 4rem;
+    font-weight: 100;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--pure);
+
+}
+.hero h1 span{
+    color: var(--primary);
+}
+.hero p{
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    color: var(--light);
+}
+/* .btn-secondary{
+    margin-bottom: 4rem;
+} */
+
+
+/* mobile menu */
+
+.mobile-menu span{
+    color: var(--pure);
+    font-size: 3rem;
+    float: right;
+    display: none;
+    z-index: 999999999;
+}
+.mobile-menu span:hover{
+    cursor: pointer;
+}
+.mobile-menu img{
+    height: 40px;
+    width: 100px;
+}
+.overlay{
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--light);
+    overflow-x: hidden;
+    transition: all .5s ease;
+    z-index: 11111111111;
+}
+.overlay-content{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 20%;
+}
+.overlay a{
+    text-decoration: none;
+    display: block;
+    font-size: 2rem;
+    padding: .5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2;
+}
+.overlay a:hover{
+    color: var(--primary);
+}
+.overlay .times{
+    color: var(--dark);
+    position: absolute;
+    right: 4rem;
+    font-size: 4rem;
+    margin-top: 2rem;
+}
+/* Sticky nav */
+ .sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999999;
+    background: var(--light);
+}
+.sticky .branding img{
+    display: none;
+}
+.sticky .branding .dark-logo{
+    display: block;
+}
+header nav .branding .dark-logo {
+    height: 39px;
+    width: 100px;
+    margin-top: -1rem;
+}
+.sticky .left.flex.items-center {
+    margin-left: 3rem;
+}
+.sticky  .nav-item a{
+    color: var(--dark);
+}
+.sticky .left{
+    margin-left: 9rem;
+}
+.scroll-down{
+    position: absolute;
+    bottom: 9vh;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 13px;
+    z-index: 8;
+
+}
+.scroll-down i{
+    position: relative;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    height: 44px;
+    width: 28px;
+    line-height: 54px;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    display: inline-block;
+    color: #fff;
+    font-size: 10px;
+}
+.scroll-down i::after{
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 11px;
+    border-radius: 2px;
+    z-index: -1;
+    bottom: 0px;
+    transition: all .3s;
+    height: 10px;
+    width: 3px;
+    background: #fff;
+}
+
+@keyframes bounce{
+    from{
+        top: 40px;
+    }
+    to{
+        top: 0px;
+    }
+    
+}
+@keyframes type{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+    }
+
+}
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END Header Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  START Header Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+.about-section .about-me-img{
+    height: 450px;
+    margin-left: 8rem;
+}
+
+.about-section h1{
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.about-section h1 span{
+    color: var(--primary);
+}
+.about-section h3{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.about-section p{
+    font-family: 'Lato',sans-serif;
+    color: var(--ternary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+ }
+
+.about-section .social-icon a{
+    color: #ffffff;
+}
+.about-section .social-icon a:link i::before{
+    background: var(--ternary);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-size: 1.6rem;
+    margin-right: .6rem;
+    padding: .5rem;
+    display: inline-block;
+    transition: all .3s ease;
+
+}
+.about-section .social-icon a:hover i::before{
+    background: var(--primary);
+    transform: rotate(360deg);
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END ABOUT Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ START SERVICES Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+.service-section{
+    background: var(--light);
+}
+.service-section .service-info{
+    text-align: center;
+}
+.service-section .sub-heading{
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    line-height: 0.5;
+    font-weight: 400;
+}
+
+.service-section .service-info p{
+    margin-bottom: 5rem;
+}
+.service-section .card-wrapper{
+     display: grid;
+     grid-template-columns:  repeat(3, 1fr);
+     grid-column-gap: 2rem;
+     grid-row-gap: 4rem;
+     position: relative;
+     transition: all 0.3s ease;
+}
+.service-section .card{
+    background: var(--pure);
+    padding: 3rem 2rem;
+    position: relative;
+    padding-top: 4rem;
+    text-align: center;
+
+
+}
+.code{
+    width: 55px;
+    height: 55px;
+    background: var(--primary);
+}
+.code .fas{
+    text-align: center;
+    align-items: center;
+    padding: .6rem;
+    font-size: 2rem;
+}
+.service-section .card-wrapper .card .code{
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.service-section .card-wrapper h3{
+    margin-bottom: .5rem;
+}
+.service-section .card-wrapper .card:hover{
+    background: var(--dark);
+}
+.service-section .card-wrapper .card:hover p,.service-section .card-wrapper .card:hover h3{
+    color: var(--pure);
+}
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END sERVICES Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  Freelancer Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+.freelancer-section{
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('../img/camera.png');
+    color: var(--pure);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 80%, 0 100%);
+
+}
+.freelancer-section h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    color: var(--pure);
+}
+.freelancer-section p{
+    color: var(--ternary);
+    margin-bottom: 3rem;
+
+}
+/* Client Section */
+.client-section{
+    text-align: center;
+}
+.client-section .slider .slide img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1.5rem 0;
+}
+.client-section .slider .slide{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 6rem;
+}
+.client-section .slider .slide span{
+    font-size: 0.8rem;
+}
+
+.client-section .slider .dots{
+    list-style-type: none;
+    display: flex!important;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.client-section .slider .dots button{
+    font-size: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: .5rem;
+    margin-right: .5rem;
+    border: 2px solid var(--ternary);
+    background: var(--ternary);
+    cursor: pointer;
+    background: none;
+}
+.client-section .slider .dots .slick-active button{
+    background: var(--primary);
+    border: none;
+    width: 2rem;
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END Freelancer Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  START WORK Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+.work-section{
+    text-align: center;
+    background: var(--light);
+}
+.work-section p{
+    margin-bottom: 3rem;
+}
+.work-section .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+.work-section .card-wrapper .card{
+    position: relative;
+    height: 250px;
+}
+.work-section .card-wrapper .card img{
+     height: 100%;
+     width: 100%;
+    
+}
+.work-section .card-wrapper .card .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61,207,211,0.9);
+    color: var(--light);
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.work-section .card-wrapper .card .overlay a{
+    color: var(--secondary);
+    text-decoration: none;
+}
+.work-section .card-wrapper .card .overlay:hover{
+    opacity: 1;
+    z-index: 1;
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END WORK Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  START BLOG Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+.blog-section{
+    background: var(--dark);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 90%, 0 100%);
+    padding-bottom: 10rem;
+}
+.blog-section h2{
+    color: var(--pure);
+    text-align: center;
+}
+.blog-section p{
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.blog-section .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+.blog-section .card .img-wrapper img{
+    width: 100%;
+}
+.blog-section .card-wrapper .card{
+    background: var(--pure);
+}
+ .blog-section .card-wrapper .card .card-content{
+    padding: 1rem;
+} 
+.blog-section .card-wrapper .card .card-content p{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.blog-section .card-wrapper .card .card-content h2{
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+.blog-section .card-wrapper .card .card-content h2:hover{
+    color: var(--primary);
+}
+.blog-section .card-wrapper .card .card-content a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+.blog-section .card-wrapper .card .card-content span{
+    color: var(--ternary);
+    font-size: 0.8rem;
+}
+.blog-section .card-wrapper .card .card-content a .read{
+    font-size: 0.8rem;
+}
+.blog-section .card-wrapper .card-content  a:hover{
+    color: var(--primary);
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END BLOG Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  START CONTACT Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+.contact-section{
+    text-align: center;
+}
+.contact-section .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    margin-top: 2rem;
+}
+.contact-section .card-wrapper .image i{
+    font-size: 3rem;
+    margin: 3rem;
+}
+.contact-section .card-wrapper .card h2{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+.contact-section .card-wrapper .card h6{
+    font-size: 1rem;
+    color: var(--ternary);
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+.contact-section form .input-wrap-1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+.contact-section form .input-wrap-2{
+    display: flex;
+    flex-direction: column;
+
+}
+.contact-section input{
+    padding: .5rem;
+    border: 1px solid var(--light);
+    font-size: 0.8rem;
+    outline: none;
+}
+.contact-section .input-wrap-2 input{
+    margin-bottom: 2rem;
+}
+.contact-section .input-wrap-2 textarea{
+    padding: .5rem;
+    border: 1px solid var(--light);
+    margin-bottom: 2em;
+    outline: none;
+}
+.contact-section .btn-wrapper{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END CONTACT Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  START FOOTER Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+
+footer{
+    background: var(--dark);
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+}
+footer .logo img{
+    width: 100px;
+    margin-bottom: 2rem;
+}
+footer .social-icon a{
+    text-decoration: none;
+}
+
+footer .social-icon a:link i::before{
+    margin-right: 1rem;
+    color: var(--light);
+    margin-bottom: 2rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--primary);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    padding: .5rem;
+    align-items: center;
+    display: inline-block;
+    transition: all .3s ease;
+
+}
+footer .social-icon a:hover i::before{
+    transform: rotate(360deg);
+    color: var(--pure);
+    background: var(--dark);
+    border: 3px solid var(--primary);
+}
+.back-top{
+    text-align: center;
+    position: fixed;
+    bottom: 15px;
+    height: 35px;
+    width: 35px;
+    display: none;
+    z-index: 10000;
+    border-radius: 3px;
+    right: 20px;
+    transition: all 0.5s;
+    display: none;
+    background-color: var(--primary);
+}
+.back-top i{
+    font-size: 30px;
+    line-height: 35px;
+    align-items: center;
+    color: var(--pure);
+} 
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  END FOOTER Section 
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+

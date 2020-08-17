@@ -1,0 +1,199 @@
+
+@media(max-width: 1250px){
+    .sticky .left {
+        margin-left: 3.5rem;
+    }
+}
+
+@media(max-width: 1200px){
+    .sticky .left {
+        margin-left: 8rem!important;
+    }
+    .sticky nav{
+        width: 100%;
+    }
+}
+@media(max-width: 1170px){
+    .sticky .left.flex.items-center {
+        margin-left: 5.5rem;
+    }
+}
+@media(max-width:1024px){
+    header .mobile-menu span{
+        display: block;
+    }
+    header .nav-item{
+        display: none;
+    }
+    .contact-btn{
+        display: none;
+    }
+     header .hero .right h1 {
+        font-size: 4rem;
+    } 
+    .sticky .mobile-menu span{
+        color: var(--dark);
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 992px){
+    /* header{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 74% 93%, 0 100%) !important;
+    } */
+    .about-section .about-me-img {
+        width: 350px !important;
+        margin-left: 0rem !important;
+}
+    .freelancer-section {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 88%, 0 100%) !important;
+
+    }
+    .blog-section{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 95%, 0 100%) !important;
+    }
+
+}
+
+
+ @media (max-width: 768px){
+    
+     header .hero .left img {
+        width: 250px;
+    }
+     header .hero .right h1 {
+        font-size: 3rem;
+    } 
+    header .hero .right{
+        padding-top: 8rem;
+    }
+    .about-section .about-me-img {
+        max-height: 260px;
+    }
+    .service-section .card-wrapper{
+        grid-template-columns: repeat(2, 1fr)!important;
+
+    }
+    .work-section .card-wrapper {
+        grid-template-columns: repeat(2, 1fr)!important;
+    }
+    .blog-section .card-wrapper{
+        grid-template-columns: repeat(1, 1fr)!important;
+    }
+    .blog-section {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 76% 98%, 0 100%)!important;
+    }
+}
+
+
+
+@media (max-width: 640px){
+    section {
+        padding: 2rem 0 !important;
+    } 
+    .about-section .about-outer-wrap{
+        /* margin-right: -4rem !important; */
+        padding: 1rem 2rem;
+    }
+    .about-section .about-me-img{
+        width: 300px !important;
+    }
+    .about-section .social-icon i{
+        margin-right: -.2rem;
+    }
+}
+
+
+
+@media (max-width: 576px)
+{
+    section {
+        padding: 3rem 0!important;
+    }
+    .hero{
+        flex-direction: column;
+    }
+    .hero .right{
+        position: absolute;
+        top: 10rem;
+        padding: 0 2rem;
+        background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.9));
+    }
+    .hero p{
+        color: var(--light);
+    }
+    .hero .left{
+        margin-top: -3rem;
+        margin-right: -10rem;
+        padding-bottom: 5rem;
+    }
+    /* header{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%)!important;
+    } */
+    .about-inner-wrap{
+        flex-direction: column;
+    }
+    .about-section .about-me-img{
+        margin-left: 0!important;
+    }
+    .about-outer-wrap{
+        text-align: center;
+        margin-top: 2rem;
+        padding: 0 2rem;
+    }
+    .service-section .card-wrapper {
+        grid-template-columns: repeat(1, 1fr)!important;
+        grid-row-gap: 2rem;
+    }
+    .freelancer-section{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 74% 93%, 0 100%) !important;
+    }
+    .work-section .card-wrapper{
+        grid-template-columns: repeat(1, 1fr)!important;
+        grid-row-gap: 0 !important  ;
+    }
+    .blog-section .card-wrapper .card:last-child{
+        margin-bottom: 2rem;
+    }
+    .contact-section .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+        grid-gap: 1rem !important;
+        margin-top: 0 !important;
+    }
+    .client-section .slider .slide{
+        padding: 0rem !important;
+    }
+    .contact-section form .input-wrap-1{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .sticky .branding img{
+        color: var(--dark);
+        margin-left: 1rem;
+    }
+}
+
+/*
+@media (min-width: 576px)
+{
+    .container{
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px)
+{
+    .container{
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px)
+{
+    .container{
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px)
+{
+    .container{
+        max-width: 1152px;
+    }
+} 
